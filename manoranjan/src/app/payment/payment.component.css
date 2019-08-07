@@ -1,0 +1,97 @@
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+
+.outer {
+    background-color: black;
+    padding-top: 150px;
+}
+
+.container {
+    padding-top: 20px;
+    width: 35%;
+    font-family: 'Merriweather', serif;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-image: element();
+    overflow: hidden;
+    color: black;
+    background-color: white;
+    margin-bottom: -100px;
+}
+
+.top-space {
+    overflow: hidden;
+}
+
+.container-narrow>hr {
+    margin: 30px 0;
+}
+
+label {
+    display: block;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    margin-top: 33%;
+    margin-bottom: 33%;
+}
+
+.modal-body {
+    margin-left: 7%;
+    margin-top: 30px;
+}
+
+#myModal {
+    height: 400px;
+    width: 25%;
+    margin-left: 38%;
+    margin-top: 15%;
+    color: #36c5ff;
+    font-family: 'Merriweather', serif;
+}
+
+#modalFooter {
+    margin-left: 48%;
+    margin-bottom: 25px;
+}
+
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 150px;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+    overflow-x: hidden;
+}
+.footer{
+    margin-top: -112px;
+    /* margin-bottom: -40px; */
+}
+.btn {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 14px;
+    background: #36c5ff;
+}

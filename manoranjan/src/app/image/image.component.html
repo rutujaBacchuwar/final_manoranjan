@@ -1,0 +1,103 @@
+<div class="main">
+        <!--navbar section-->
+        <app-nav-norm *ngIf="status==='false'"></app-nav-norm>
+        <app-main-nav *ngIf="status==='true'"></app-main-nav>
+        <!--end of nevbar section-->
+        <!-- movie image -->
+            <div class="detail-page">
+                <div class="masthead-container">
+                    <div class="masthead-card masthead-hover" style="background-color: rgb(18, 63, 68);">
+                        <div class="content-holder">
+                            <div class="badge-wrapper"></div>
+                            <div class="toptitle clear-both">{{serial1.episodicTitle}}</div>
+                            <div class="content-meta"> 
+                                <span>
+                                    <!-- <span class="meta-data">2 hr 23 min</span> -->
+                                    <!-- <span class="meta-data">{{date|date:'short'}}</span> -->
+                                    <!-- <span class="meta-data">{{media1.mediaGenre}}</span> -->
+                                    <!-- <span class="meta-data">PG</span> -->
+                                    <span class="meta-data">{{serial1.episodicLanguage}}</span>
+                                </span> 
+                            </div>
+                            <div class="description">
+                                <!-- Based on a novel by Chetan Bhagat; North and South India come together in this chholey-bhaturey-idli-dosa romance of Punjabi Krish Malhotra and Tamilian Ananya Swaminathan, who meet at the IIM campus. -->
+                                {{serial1.episodicSynopsis}}
+                            </div>
+                        </div>
+                        <div class="image-holder">
+                            <div class="imageloader loaded">
+                                <span class="imageloader loaded">
+                                    <!-- <img src="https://secure-media1.hotstarext.com/r1/thumbs/PCTV/02/1000034502/PCTV-1000034502-hcdl.jpg"> -->
+                                    <img src="{{serial1.episodicPosterUrl}}">
+                                </span>
+                            </div>
+                            <div class="watch-share">
+                                <div class="watchlist-holder ">
+                                    <div class="add-to-watchlist ">
+                                        <div class="click-icon " title="Add to Watchlist">
+                                            <div class="click-icon-wrapper">    
+                                                <div class="watchlist-icon bottom-right">
+                                                    <i class="fa fa-list-ul" style="font-size:24px;color:white"></i> 
+                                                </div>
+                                                <p class="icon-title bottom-right2">Wishlist</p>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-holder">
+                            <div class="click-icon share-click-icon">
+                                <div class="click-icon-wrapper">
+                                    <div class="share-icon bottom-right">
+                                        <i class="fa fa-share-alt" style="font-size:24px;color:white"></i>
+                                    </div>
+                                    <p class="icon-title bottom-right2">Share</p>
+                                </div>
+
+                            </div>
+                            <div class="social-wrap slide-in">
+                                <div class="share-wrap">
+                                    <div class="fb-share">
+                                        <a class="fb-icon" title="Share"></a>
+                                    </div>
+                                    <div class="tw-share">
+                                        <a class="tw-icon" title="Tweet"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="action-holder">
+                            <div class="action">
+                                <button type="button" (click)="playVideo()" class="action-container" style="background-color: rgb(18, 63, 68);">
+                                    <div class="action-data">
+                                        <div class="action-play">
+                                            <div class="play-btn">
+                                                <i class="fa fa-play" style="font-size:24px"></i>
+                                            </div>
+                                        </div>
+                                        <div class="action-content">
+                                            <div class="action-primary-txt pull-left">
+                                                <div>Watch</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-gradient" style="background: linear-gradient( to left, rgba(0, 0, 0, 0), rgb(18, 63, 68));">
+                    <div class="footer-gradient" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(18, 63, 68, 0.6));">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end moveimage -->
+    <!-- cards -->
+    <app-like-card [list]="episodeList" [title]="title"></app-like-card>
+    <app-thirdcard></app-thirdcard>
+    <!-- end cards -->
+    <app-footer></app-footer>
+</div>

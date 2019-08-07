@@ -1,0 +1,19 @@
+<div id="container">
+    <h3><b>Popular Clips</b></h3>
+    <div ng2-carouselamos class="slides-wrapper" [items]="items" [width]="1400" [$prev]="prev" [$next]="next" [$item]="item">
+    </div>
+
+    <ng-template #prev>
+        <img src="../../assets/left.png" id="left">
+    </ng-template>
+
+    <ng-template #next>
+        <img src="../../assets/right.png" id="right">
+    </ng-template>
+
+    <ng-template #item let-item let-i="index">
+        <div class="items">
+            <img class="latest" src="{{ item.name }}" routerLink="/movie">
+        </div>
+    </ng-template>
+</div>

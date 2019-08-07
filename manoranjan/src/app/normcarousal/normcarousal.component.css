@@ -1,0 +1,32 @@
+img {
+    height: 400px;
+    margin-top: 100px;
+    max-width: 80%;
+    width: 1150px;
+    align-items: center;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.bd-example {
+    position: relative;
+    z-index: 1px;
+}
+
+.section-content {
+    padding: 5rem 0;
+    font-family: 'Merriweather', serif;
+}
+
+@media screen and ( min-width: 991px) {
+    .feature-content {
+        display: flex;
+        align-items: center;
+    }
+}

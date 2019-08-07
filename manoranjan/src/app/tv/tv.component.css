@@ -1,0 +1,84 @@
+.main {
+    background-color: black;
+    font-family: 'Merriweather', serif;
+}
+
+.btn-group i {
+    color: rgb(20, 19, 19);
+}
+
+nav {
+    position: fixed;
+    z-index: -1;
+}
+
+li.menu-item {
+    margin: 0 0 10px 0;
+    transform: translate(15px, -5px);
+    position: absolute;
+    padding-right: 15px;
+    font-family: 'Merriweather', serif;
+}
+
+.nav-item {
+    padding-right: 50px;
+}
+
+.navbar-brand {
+    padding-right: 20px;
+}
+
+.form-inline {
+    padding-left: 200px;
+    padding-right: 20px;
+}
+
+.form-inline i {
+    color: white;
+}
+
+a.navbar-brand {
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+}
+
+h4 {
+    font-family: 'Merriweather', serif;
+    color: white;
+    font-size: 22px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.container {
+    padding-top: 90px;
+    top: 8px;
+}
+
+.image {
+    display: block;
+    width: 165px;
+    height: 180px;
+    border-radius: 14px;
+    margin-left: 12px;
+    margin-top: 30px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 165px;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container-fluid {
+    margin-top: -10px;
+}

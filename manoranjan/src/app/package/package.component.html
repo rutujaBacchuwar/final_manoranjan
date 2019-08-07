@@ -1,0 +1,70 @@
+<app-nav></app-nav>>
+<div class="popup">
+    <h3>Manoranjan Premium</h3>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    <h4>Plan1</h4>
+                    <ul>
+                        <li>For 3 Months</li>
+                        <li>Non Refundable</li>
+                    </ul>
+                </a>
+            </div>
+            <div id="collapseOne" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <h2 style="text-align: center">Premium For 3 Months</h2>
+                    <div>
+                        <ul>
+                            <li>
+                                Latest Movies
+
+                            </li>
+                            <li>Latest episodes of Indian Tv shows</li>
+                            <li>
+                                Hollywood BlockBusters
+                            </li>
+                            <li>New Indian Movie Premieres</li>
+
+                        </ul>
+
+                    </div>
+                    <div class="btn btn-info btn-sm" (click)="sendPackage3()">Get This Plan</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                    <h4>Plan2</h4>
+                    <ul>
+                        <li>For 6 Months</li>
+                        <li>Non Refundable</li>
+                    </ul>
+                </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <h2 style="text-align: center">Premium For 6 Months</h2>
+                    <div>
+                        <ul>
+                            <li>
+                                Latest American Shows
+                            </li>
+                            <li>Latest episodes of Indian Tv shows</li>
+                            <li>
+                                Hollywood BlockBusters
+                            </li>
+                            <li>New Indian Movie Premieres</li>
+                        </ul>
+                    </div>
+                    <div class="btn btn-info btn-sm" (click)="sendPackage6()">Get This Plan</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=footer>
+<app-footer></app-footer>
+</div>

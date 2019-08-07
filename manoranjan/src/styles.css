@@ -1,0 +1,22 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Exo:700');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+body {
+    margin: 0;
+    background-color: black;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+}
+
+.mat-step-header .mat-step-icon {
+    background-color: skyblue;
+    color: #fff;
+}

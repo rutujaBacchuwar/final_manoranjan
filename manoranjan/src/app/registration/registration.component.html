@@ -1,0 +1,204 @@
+<app-nav></app-nav>
+<section fxLayout="row wrap" fxLayoutAlign="center center" class="section">
+    <mat-card fxFlex="1000px" fxFlex.xs="50%" id="outerMatCard">
+        <mat-toolbar>
+            <span class="fill-remaining-space"></span>
+            <span style="margin-top: 35px;font-family: 'Merriweather',serif;font-weight:bold;"> </span>
+            <span class="fill-remaining-space"></span>
+        </mat-toolbar>
+        <mat-horizontal-stepper labelPosition="bottom" linear>
+            <mat-step [stepControl]="firstForm">
+                <form #viewerForm="ngForm" [formGroup]="firstFormGroup" class="form-horizontal" (ngSubmit)="onSubmitViewerDetails(firstFormGroup.value)">
+                    <ng-template matStepLabel><span class="headingStyle">Credential</span></ng-template>
+                    <mat-card class="example-card " id="first-card">
+                        <mat-card-content class="content">
+                            <div class="row row1">
+                                <div class="col-5" id="name"> <label> Name </label></div>
+                                <div class="col-5"> <input class="form-control" type="text" name="name" formControlName="name" [(ngModel)]="name" required></div>
+                                <mat-error *ngFor="let validation of validation_messages.name" id="error">
+                                    <mat-error class="error-message" *ngIf="firstFormGroup.get('name').hasError(validation.type) && (firstFormGroup.get('name').dirty || firstFormGroup.get('name').touched)">
+                                        {{validation.message}}
+                                    </mat-error>
+                                </mat-error>
+                            </div> <br><br>
+                            <div class="row" id="row2">
+                                <div class="col-5" id="email"> <label>Email</label></div>
+                                <div class="col-5"> <input class="form-control" #email type="text" name="emailId" formControlName="emailId" [(ngModel)]="emailId" required></div>
+                                <mat-error *ngFor="let validation of validation_messages.emailId" id="error">
+                                    <mat-error class="error-message" *ngIf="firstFormGroup.get('emailId').hasError(validation.type) && (firstFormGroup.get('emailId').dirty || firstFormGroup.get('emailId').touched)">
+                                        {{validation.message}}
+                                    </mat-error>
+                                </mat-error>
+                                <!-- </mat-form-field>  -->
+                            </div><br><br>
+                            <!-- age row is closed-->
+                            <div class="row" id="row3">
+                                <div class="col-5"> <label id="password">Password </label> </div>
+                                <!-- <mat-form-field> -->
+                                <div class="col-5"><input name="password" class="form-control" type="text" formControlName="password" [type]="!hide ? 'password' : 'text'" [(ngModel)]="password" required>
+                                </div>
+                                <div class="col-1" id="passwordIcon">
+                                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                                </div>
+                                <mat-error *ngFor="let validation of validation_messages.password" id="error">
+                                    <mat-error class="error-message" *ngIf="firstFormGroup.get('password').hasError(validation.type) && (firstFormGroup.get('password').dirty || firstFormGroup.get('password').touched)">
+                                        {{validation.message}}
+                                    </mat-error>
+                                </mat-error>
+                            </div>
+                            <br>
+                        </mat-card-content>
+                        <div style="margin-top: 90px">
+                            <button mat-stroked-button matStepperNext [disabled]="!firstFormGroup.valid" class="btn-color">Next</button>
+                        </div>
+                    </mat-card>
+
+                </form>
+            </mat-step>
+            <!-- 2nd stapper form here-->
+            <mat-step [stepControl]="secondForm">
+                <form #viewerForm="ngForm" [formGroup]="secondFormGroup" class="form-horizontal" (ngSubmit)="onSubmitMoreDetails(secondFormGroup.value)">
+                    <ng-template matStepLabel><span class="headingStyle">Personal Details</span></ng-template>
+                    <mat-card class="example-card" id="second-card">
+                        <mat-card-content class="content">
+                            <div class="row row1">
+                                <div class="col-5"> <label id="age"> Age </label></div>
+                                <div class="col-5"> <input class="form-control" type="text" name="age" formControlName="age" [(ngModel)]="age" matInput required></div>
+                                <mat-error *ngFor="let validation of validation_messages.age" id="error">
+                                    <mat-error class="error-message" *ngIf="secondFormGroup.get('age').hasError(validation.type) && (secondFormGroup.get('age').dirty || secondFormGroup.get('age').touched)">
+                                        {{validation.message}}
+                                    </mat-error>
+                                </mat-error>
+                            </div>
+                            <br><br>
+                            <div class="row">
+                                <div class="col-5" id="gender"><label>Gender</label></div>
+                                <div class="col-5">
+                                    <mat-radio-group class="genderradio" formControlName="gender" [(ngModel)]="gender">
+                                        <mat-radio-button value="male" style="margin-right: 20px; margin-left: -130px">Male
+                                        </mat-radio-button>
+                                        <mat-radio-button value="female"> Female</mat-radio-button>
+                                        <mat-error *ngFor="let validation of validation_messages.gender">
+                                            <mat-error class="error-message" *ngIf="secondFormGroup.get('gender').hasError(validation.type) && (secondFormGroup.get('gender').dirty || secondFormGroup.get('gender').touched)">
+                                                {{validation.message}}
+                                            </mat-error>
+                                        </mat-error>
+                                    </mat-radio-group>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="row">
+                                    <div class="col-5" id="mobile"> <label>Mobile </label></div>
+                                    <div class="col-5"> <input class="form-control" type="text" name="mobile" matInput required formControlName="mobileNo" [(ngModel)]="mobileNo"></div>
+                                    <mat-error *ngFor="let validation of validation_messages.mobileNo" id="error">
+                                        <mat-error class="error-message" *ngIf="secondFormGroup.get('mobileNo').hasError(validation.type) && (secondFormGroup.get('mobileNo').dirty || secondFormGroup.get('mobileNo').touched)">
+                                            {{validation.message}}
+                                        </mat-error>
+                                    </mat-error>
+                                </div>
+                                <br>
+                                <!-- mobile row is closed-->
+                            </mat-card-content>
+                            <div style="margin-top: 115px">
+                                <button mat-stroked-button matStepperPrevious class="btn-color">Back</button>&nbsp;
+                                <button mat-stroked-button matStepperNext [disabled]="!secondFormGroup.valid" class="nextButton">Next</button>
+                            </div>
+                        </mat-card>
+                    </form>
+                </mat-step>
+<mat-step [stepControl]="thirdForm" >
+    <form class="form-horizontal">
+        <ng-template matStepLabel><span class="headingStyle">Interest</span></ng-template>
+       <mat-card class="example-card" id="third-card" >
+          <mat-card-content class="content" >
+                <mat-grid-list cols="3" id="firstgrid">
+                    <mat-grid-tile id="firstImage" >
+                        <mat-button-toggle class="imageCard"  (change)="onSubmInterest($event.value)" value="biopic">
+                          <img  id="biopicImage" mat-card-md-image src="../../assets/images/genre_biopic.png" alt="biopic">
+                      </mat-button-toggle>
+                    </mat-grid-tile>
+                    <mat-grid-tile id="secondImage">   
+                      <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="kid">
+                       <img mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Animation._CB1513316167_SX233_CR0,0,233,131_AL_.jpg" alt="kid">
+                      </mat-button-toggle>
+                   </mat-grid-tile>
+                  <mat-grid-tile id="thirdImage">
+                      <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="action">
+                        <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Action._CB1513316166_SX233_CR0,0,233,131_AL_.jpg" alt="action">     
+                      </mat-button-toggle>
+                  </mat-grid-tile>
+               </mat-grid-list>
+               <mat-grid-list cols="3">
+                 <mat-grid-tile id="firstImage">
+                  <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="mystery">
+                    <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Mystery._CB1513316168_SX233_CR0,0,233,131_AL_.jpg" alt="mystery">
+                  </mat-button-toggle>
+               </mat-grid-tile>
+              <mat-grid-tile id="fifthImage">
+                    <mat-button-toggle class="imageCard"(change)="onSubmInterest($event.value)" value="mythology">
+                  <img  id="mythologyImage" mat-card-md-image src="../../assets/images/genre_mythology.png" alt="mythology">
+                    </mat-button-toggle>
+              </mat-grid-tile>
+              <mat-grid-tile id="sixthImage">
+                      <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="comedy">
+                        <img mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Comedy._CB1513316167_SX233_CR0,0,233,131_AL_.jpg" alt="comedy">
+                      </mat-button-toggle>
+              </mat-grid-tile>
+           </mat-grid-list>
+    <mat-grid-list cols="3" id="gridimages">
+        <mat-grid-tile id="seventhImage">
+                <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)"  value="horror">
+                  <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Horror._CB1513316168_SX233_CR0,0,233,131_AL_.jpg"  alt="horror">
+                </mat-button-toggle>
+          </mat-grid-tile>
+          <mat-grid-tile id="eighthImage">
+                  <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="romantic">
+                   <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Romance._CB1513316168_SX233_CR0,0,233,131_AL_.jpg" alt="romantic">
+                  </mat-button-toggle>
+         </mat-grid-tile>
+         <mat-grid-tile id="thirdImage">
+            <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)"  value="science">
+             <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Sci-Fi._CB1513316168_SX233_CR0,0,233,131_AL_.jpg"  alt="science">
+            </mat-button-toggle>
+       </mat-grid-tile>
+     </mat-grid-list> 
+  <!-- 3rd row of cards is close -->
+      </mat-card-content>
+        <button mat-stroked-button matStepperPrevious  class="btn-color">Back</button>&nbsp;                      
+        <button mat-stroked-button matStepperNext class="nextButton" class="btn-color">Next</button>
+        </mat-card>   
+      </form>
+</mat-step>
+<!-- form 3rd is closed--> 
+ <mat-step [stepControl]="fourthForm">
+      <form #viewerForm="ngForm" class="form-horizontal" >
+           <ng-template matStepLabel><span class="headingStyle">Submit</span></ng-template>
+               <mat-card class="example-card" id="fourth-card">
+                  <mat-card-content class="content">
+                    <div class="container1" id="success">        
+                      <h3>
+                          Thank you!
+                        </h3>
+                         <br>
+                        <p >Click SUBMIT to successfully register here!</p>
+                    </div>
+                   <br>
+                 </mat-card-content>
+                 <div id="submit">
+                    <button type="submit" (click)="submitDetails()" mat-stroked-button matStepperNext class="btn-color">Submit</button>
+               </div> 
+              </mat-card>  
+      </form>
+</mat-step>
+</mat-horizontal-stepper>  
+</mat-card>
+</section>
+<div style="margin-top: -55px" >
+<app-footer></app-footer>
+</div>
+
+            
+
+

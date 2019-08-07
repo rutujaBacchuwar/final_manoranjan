@@ -1,0 +1,132 @@
+.main {
+    background-color: black;
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+}
+
+h4 {
+    font-family: 'Merriweather', serif;
+    color: white;
+    font-size: 22px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.container {
+    padding-top: 90px;
+    top: 8px;
+}
+
+.image {
+    display: block;
+    width: 165px;
+    height: 180px;
+    border-radius: 14px;
+    /* margin-left: 12px; */
+    margin-top: 30px;
+}
+
+.container-fluid {
+    margin-top: -10px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    opacity: none;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+}
+.close1 {
+    position: absolute;
+    top: 0;
+    opacity: none;
+    right: 0;
+    height: 21px;
+    width: 30px;
+    border-radius: 40px;
+    margin-top: 3%;
+    font-family: 'Chewy', cursive;
+}
+
+.box {
+    position: relative;
+    /* overflow: hidden; */
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+.box .imgbox {
+    position: relative;
+}
+
+.box .imgbox img {
+    transition: .5s;
+}
+
+.box:hover .imgbox img {
+    opacity: .8;
+    /* transform: translateY(-40px); */
+    -webkit-transform: scale(1.22);
+    transform: scale(1.22);
+}
+
+.box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 10px;
+    /* padding-top: 20px; */
+    box-sizing: border-box;
+    transition: .5s;
+    opacity: 0;
+}
+
+.box:hover .content {
+    opacity: 1;
+}
+
+.box .content h3 {
+    /* padding-top: 20px; */
+    font-size: 15px;
+    color: white;
+    font-weight: 700;
+}
+
+.box .content p {
+    font-size: 12px;
+    color: white;
+    font-weight: 600;
+}
+
+.box .content btnD {
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .5s;
+}
+
+.box .content p {
+    /* color: rgb(240, 51, 92); */
+    color:white;
+    font-size: 15px;
+}
+.box .content h3 {
+    color: rgb(240, 51, 92);
+}
+p{
+    color: rgb(240, 51, 92);
+}
+
+app-footer {
+    margin-top: 23%;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}

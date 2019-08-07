@@ -1,0 +1,35 @@
+<div class="main">
+
+    <div class="container">
+        <h4>Documentary</h4>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2" *ngFor="let doc of documentaries1">
+                    <div class="box" *ngIf="doc.mediaType=='free'">
+                        <div class="imgbox">
+                            <img src="{{doc.mediaPosterUrl}}" class="image" routerLink="/movie/{{doc.mediaTitle}}">
+                        </div>
+                        <div class="content">
+                            <h3>{{doc.mediaTitle}}</h3>
+                            <p>{{doc.mediaSynopsis}}</p>
+                        </div>
+                    </div>
+                    <div class="box" *ngIf="doc.mediaType=='premium'">
+                        <div class="imgbox">
+                            <img src="{{doc.mediaPosterUrl}}" class="image" routerLink="/movie/{{doc.mediaTitle}}">
+                            <span class="close1 badge badge-danger">M</span>
+                            <!-- <img class="close" src="../../assets/premiumLogo.jpeg" /> -->
+                            <!-- <p class="close">M</p> -->
+
+                        </div>
+                        <div class="content">
+                            <h3>{{doc.mediaTitle}}</h3>
+                            <p>{{doc.mediaSynopsis}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+</div>

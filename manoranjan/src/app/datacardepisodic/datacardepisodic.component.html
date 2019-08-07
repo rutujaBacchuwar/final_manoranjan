@@ -1,0 +1,22 @@
+<div id="container">
+    <h4><span>{{heading}}</span></h4>
+    <div ng2-carouselamos class="slides-wrapper" [items]="list" [width]="1150" [$prev]="prev" [$next]="next" [$item]="item">
+    </div>
+
+    <ng-template #prev>
+        <img src="../../assets/left.png" id="left">
+    </ng-template>
+
+    <ng-template #next>
+        <img src="../../assets/right.png" id="right">
+    </ng-template>
+
+    <ng-template #item let-item let-i="index">
+        <div class="box">
+            <div class="imgbox">
+            <img class="latest" src="{{ item.episodicPosterUrl }}" (click)="sendDetails(item)">
+            <span class="close1 badge badge-danger">M</span>
+        </div>
+    </div>
+    </ng-template>
+</div>

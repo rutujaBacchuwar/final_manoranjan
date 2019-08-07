@@ -1,0 +1,316 @@
+
+<app-nav></app-nav>
+<section fxLayout="row wrap" fxLayoutAlign="center center"  class="section"  style="  background-color: black ;margin-top: 150px" >
+   <mat-card fxFlex="1000px" fxFlex.xs="50%" id="outerMatCard">
+      <mat-horizontal-stepper labelPosition="bottom" #stepper  style="height: 100%;margin-left: 100px;margin-right:100px  ">
+         <mat-step [stepControl]="firstForm">
+            <form #viewerForm="ngForm" [formGroup]="firstFormGroup"  class="form-horizontal" (ngSubmit)="onFirstSubmit(firstFormGroup.value)" >
+              <ng-template matStepLabel ><span class="headingStyle" >Catalog</span></ng-template>
+                <mat-card class="example-card"  style="margin-top:-70px" >
+                  <mat-card-content class="content" >
+                    <div class="container3">
+                       <div class="row">
+                          <div class="col-4" id="genre">
+                          <label>Genre</label>
+                        </div>
+                       </div>
+                    <mat-card class="example-card">
+                        <mat-card-content class="content">
+
+                            <mat-grid-list cols="3" id="firstgrid">
+                                <mat-grid-tile id="firstImage" >
+                                    <mat-button-toggle class="imageCard"  (change)="onSubmInterest($event.value)" value="biopic">
+                                      <img  id="biopicImage"  mat-card-md-image src="../../assets/images/genre_biopic.png" alt="biopic">
+                                  </mat-button-toggle>
+                                </mat-grid-tile>
+                                <mat-grid-tile id="secondImage">   
+                                  <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="kid">
+                                   <img mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Animation._CB1513316167_SX233_CR0,0,233,131_AL_.jpg" alt="kid">
+                                  </mat-button-toggle>
+                               </mat-grid-tile>
+                              <mat-grid-tile id="thirdImage">
+                                  <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="action">
+                                    <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Action._CB1513316166_SX233_CR0,0,233,131_AL_.jpg" alt="action">     
+                                  </mat-button-toggle>
+                              </mat-grid-tile>
+                           </mat-grid-list>
+                           <mat-grid-list cols="3" id="gridimages1">
+                             <mat-grid-tile id="firstImage">
+                              <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="mystery">
+                                <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Mystery._CB1513316168_SX233_CR0,0,233,131_AL_.jpg" alt="mystery">
+                              </mat-button-toggle>
+                           </mat-grid-tile>
+                          <mat-grid-tile id="fifthImage">
+                                <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="mythology">
+                              <img  id="mythologyImage" mat-card-md-image src="../../assets/images/genre_mythology.png" alt="mythology">
+                                </mat-button-toggle>
+                          </mat-grid-tile>
+                          <mat-grid-tile id="sixthImage">
+                                  <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="comedy">
+                                    <img mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Comedy._CB1513316167_SX233_CR0,0,233,131_AL_.jpg" alt="comedy">
+                                  </mat-button-toggle>
+                          </mat-grid-tile>
+                       </mat-grid-list>
+                <mat-grid-list cols="3" id="gridimages2">
+                    <mat-grid-tile id="seventhImage">
+                            <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)"  value="horror">
+                              <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Horror._CB1513316168_SX233_CR0,0,233,131_AL_.jpg"  alt="horror">
+                            </mat-button-toggle>
+                      </mat-grid-tile>
+                      <mat-grid-tile id="eighthImage">
+                              <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)" value="romantic">
+                               <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Romance._CB1513316168_SX233_CR0,0,233,131_AL_.jpg" alt="romantic">
+                              </mat-button-toggle>
+                     </mat-grid-tile>
+                     <mat-grid-tile id="thirdImage">
+                        <mat-button-toggle class="imageCard" (change)="onSubmInterest($event.value)"  value="science">
+                         <img  mat-card-md-image src="https://m.media-amazon.com/images/G/01/IMDb/genres/Sci-Fi._CB1513316168_SX233_CR0,0,233,131_AL_.jpg"  alt="science">
+                        </mat-button-toggle>
+                   </mat-grid-tile>
+                 </mat-grid-list> 
+
+              <!-- 3rd row of cards is close -->
+                  </mat-card-content>
+                  </mat-card>
+                  </div>
+                  <br>  
+                  <div class="row" id="releaseRow">
+                      <div class="col-4" >
+                      <label id="releaseDate" style="margin-left: -10px">Release Date</label>
+                      </div>
+                      <div class="col-8" id="date" style="margin-top: -40px">
+                      <mat-form-field style="width:300px !important ;margin-left: 80px;" >
+                      <input class="form-control" matInput formControlName="date" [matDatepicker]="picker" placeholder=" ">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                      <mat-error><span *ngIf="firstFormGroup.controls['date'].hasError('required')">Please choose a date.</span>
+                      </mat-error>
+                      </mat-form-field>
+                      </div>
+                      </div>
+              </mat-card-content>
+              <div id="bottomButton">
+              <button mat-stroked-button matStepperNext [disabled]="!firstFormGroup.valid" class="btn-color">Next</button>
+            </div>
+              </mat-card>   
+              </form>
+      </mat-step>
+      <!-- 1st stapper form closed-->
+<mat-step [stepControl]="secondForm">
+    <form #viewerForm="ngForm" [formGroup]="secondFormGroup" (ngSubmit)="onSecondSubmit(secondFormGroup.value)" class="form-horizontal" >
+    
+    <ng-template matStepLabel><span class="headingStyle">Cast & Crew</span></ng-template>
+    
+    <mat-card class="example-card">
+    <mat-card-content class="content">
+    <div class="container">
+    <div class="row" id="studioName">
+    <div class="col-3">
+    <label>Studio Name</label>
+    </div>
+    <div class="col-8" id="input3">
+    <input class="form-control" type="text" rows="1" cols="20" formControlName="studio">
+    <mat-error *ngFor="let validation of validation_messages.studio">
+    <mat-error class="error-message" *ngIf="secondFormGroup.get('studio').hasError(validation.type) && (secondFormGroup.get('studio').dirty || secondFormGroup.get('studio').touched)">{{validation.message}}
+    </mat-error>
+    </mat-error>
+    </div>
+    </div>
+    <br>
+    <div class="row">
+    <div class="col-2">
+    <label id="crew">Crew</label>
+    </div>
+    <div class="col-4" >
+    <label id="name">Name</label>
+    </div>
+    <div class="col-4" >
+    <label id="role">Role</label>
+    </div>
+    </div>
+    
+    <form #viewerForm="ngForm" [formGroup]="sixthFormGroup" class="form-horizontal " style="margin-left: 0px; margin-right: 0px; margin-top: -50px" >
+    <div class="row">
+    <div class="col-3"></div>
+    <div class="col-4">
+    <input type="text" rows="1" cols="20" class="form-control" #crewName formControlName="crewName">
+    </div>
+    <div class="col-4">
+    <select class="selectpicker" class="form-control" #crewRole formControlName="crewRole" width="150px" data-size="5" data-width="fit">
+    <option value="director">Director</option>
+    <option value="producer">Producer</option>
+    <option value="writer">Writer</option>
+    <option value="music">Music</option>
+    </select>
+    </div>
+    <div class="col-1" style="padding-bottom:8px;padding-top:2px" >
+      <button class="btn1" type="submit" (click)="addCrew(crewName.value,crewRole.value)">+</button>
+    </div>
+    </div><br>
+    </form><br>
+    <div class="row">
+    <div class="col-2" id="cast">
+    <label>Cast</label>
+    </div>
+    <!-- <div class="col-2"></div> -->
+    <div class="col-5" id="screenName">
+    <label>Screen Name</label>
+    </div>
+    <div class="col-5" id="realName">
+    <label>Real Name</label>
+    </div>
+    </div>
+    <form #viewerForm="ngForm" [formGroup]="seventhFormGroup" class="form-horizontal" style="margin-left: 0px; margin-right: 0px; margin-top: -50px">
+    <div class="row">
+    <div class="col-3"></div>
+    <div class="col-4" id="input1">
+    <input class="form-control" type="text" rows="1" cols="20" #screenName formControlName="screenName">
+    </div>
+    <div class="col-4" id="input2">
+    <input class="form-control" type="text" rows="1" cols="20" #realName formControlName="realName">
+    </div>
+    <div class="col-1" style="padding-bottom:8px;padding-top:2px">
+      <button type="submit" class="btn1" (click)="addCast(screenName.value,realName.value)">+</button>
+    </div>
+    </div>
+    </form>
+    </div>
+    
+    </mat-card-content>
+    <div id="bottomButton">
+    <button mat-stroked-button matStepperPrevious class="btn-color">Back</button>&nbsp; &nbsp; 
+    <button mat-stroked-button matStepperNext [disabled]="!secondFormGroup.valid" class="btn-color">Next</button>
+  </div>
+    </mat-card> 
+    </form>
+    <div class="row" style="width:100%;">
+        <div class="col-2" *ngFor="let crew of crewList">
+          <div class="card" style="background-color: black;color:white;font-family:'Merriweather', serif;font-weight: bold;height:100px;width:150px;margin-bottom: 10px;">
+        <h6>{{crew.crewName}} </h6> 
+        <h6>AS&nbsp;{{crew.crewRole}}</h6> 
+        </div>
+        </div>
+        <div class="col-2" *ngFor="let cast of castList">
+          <div class="card" style="background-color:black;color:white;font-family:'Merriweather', serif;font-weight: bold;height:100px;width:150px;margin-bottom: 10px;">
+        <h6>
+        {{cast.realName}}  
+        </h6>
+        <h6>
+        As&nbsp;{{cast.screenName}} 
+        </h6>
+        </div>
+        </div>
+        </div>
+    </mat-step>
+<!-- 3rd form is start here -->
+<mat-step [stepControl]="thirdForm">
+    <form  class="form-horizontal" [formGroup]="thirdFormGroup" (ngSubmit)="onThirdSubmit(thirdFormGroup.value)">
+        <ng-template matStepLabel><span class="headingStyle">Media Assets</span></ng-template>
+        <mat-card class="example-card">
+          
+            <mat-card-content class="content">
+        
+              <div class="container1">
+                  <div class="row">
+                      <div class="col-4" >
+                      <label id="language">Language</label>
+                      </div>
+                      <div class="col-7" >
+                      <select class="selectpicker form-control" formControlName="language" placeholder="select" data-width="fit">
+                      <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+                      <option data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Telugu</option>
+                      <option data-content='<span class="flag-icon flag-icon-us"></span> English'>Tamil</option>
+                      <option data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Marati</option>
+                      <option data-content='<span class="flag-icon flag-icon-us"></span> English'>Hindi</option>
+                      <option data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Gujarathi</option>
+                      <option data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Bengali</option>
+                      </select>
+                      <mat-error>
+                      <span *ngIf="!thirdFormGroup.get('language').valid && thirdFormGroup.get('language').touched">Please select language !!!</span>
+                      </mat-error>
+                      </div>
+                      </div>
+                <br><br>
+                  <div class="row" >
+                      <div class="col-4">
+                      <label id="posterImage">Poster Image</label>
+                      </div>
+                      <div class="col-7">
+                      <input type="text" class="form-control" formControlName="posterurl">
+                      <mat-error *ngFor="let validation of validation_messages.posterurl">
+                      <mat-error class="error-message" *ngIf="thirdFormGroup.get('posterurl').hasError(validation.type) && (thirdFormGroup.get('posterurl').dirty || thirdFormGroup.get('posterurl').touched)">{{validation.message}}
+                      </mat-error>
+                      </mat-error>
+                      </div>
+                      </div><br><br>
+                      <div class="row">
+                          <div class="col-4" >
+                              <label id="videoFile">Video File:</label>
+                          </div>
+                          <div class="col-5" >
+                              <input id="chooseFile" class="aligns" type="file" formControlName="video" (change)="selectVideo($event)"
+                              accept="video/*">
+                            </div>
+                              <div class="col-2">
+                            <button id="upload"  mat-raised-button (click)="uploadVideo()" [disabled]="!selectedVideo">Upload</button>
+                          </div>
+                      </div><br><br>
+
+                      <div class="row">
+                          <div class="col-4" >
+                          <label id="trailer">Trailer(optional)</label>
+                          </div>
+                          <div class="col-5">
+                          <input id="chooseFile" class="aligns" type="file" formControlName="trailer" (change)="selectTrailer($event)"
+                          accept="video/*">
+                          </div>
+                          <div class="col-2" >
+                          <button id="upload" mat-raised-button (click)="uploadTrailer()" [disabled]="!selectedTrailer">Upload</button>
+                          </div>
+                          </div><br><br>
+                    <div class="row">
+                        <div class="col-4" >
+                            <label id="contentType">Content type:</label>
+                        </div>
+                        <div class="col-7" >
+                            <select class="selectpicker form-control" formControlName="type" >
+                              <option value='free'>Free</option>
+                            <option  value="premium">Premium</option>
+                           </select>
+                           <mat-error>
+                            <span class="alert alert-danger" *ngIf="!thirdFormGroup.get('type').valid && thirdFormGroup.get('type').touched">Please select type !!!</span>
+                        </mat-error>
+                          </div>
+                    </div>
+                      </div>
+                      <!-- container is closed-->
+                    </mat-card-content>
+                    <div id="bottomButton">
+            <button mat-stroked-button matStepperPrevious class="btn-color">Back</button>&nbsp; &nbsp; 
+            <button mat-stroked-button matStepperNext [disabled]="!thirdFormGroup.valid" class="btn-color">Next</button>
+          </div>
+        </mat-card>
+    </form>
+  </mat-step>
+  <!-- form 3rd is closed-->
+  <mat-step [stepControl]="fourthForm">
+      <form #viewerForm="ngForm" class="form-horizontal" >
+          <ng-template matStepLabel><span class="headingStyle">Submit</span></ng-template>
+          <mat-card class="example-card">
+              <mat-card-content class="content">
+                  <div class="container3" id="success">
+                    <h3>Thank you!</h3>
+                    <br>
+                    <p>Click PUBLISH to successfully upload!</p>
+                    </div>
+                   </mat-card-content>
+                   <div id="bottomButton" >
+                <button id="publish" type="submit" routerLink="/producer" (click)="saveMedia()" mat-stroked-button matStepperNext>Publish</button>
+              </div>
+              </mat-card>   
+      </form>
+      </mat-step>
+</mat-horizontal-stepper> 
+</mat-card>
+</section>
+<app-footer></app-footer>

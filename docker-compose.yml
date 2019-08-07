@@ -1,0 +1,237 @@
+version: '2'
+
+services:
+  eureka-server:
+    build: eureka-server/
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    image: eureka-server
+    ports:
+      - 8085:8085
+    expose:
+      - 8085
+
+  config-service:
+    build: config-server/
+    restart: always
+    network_mode: "host"
+    image: config-service
+    hostname: localhost
+    ports:
+      - 8888:8888
+    expose:
+      - 8888
+
+  zuul-api:
+    build: zuul-api/
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    image: zuul-api
+    hostname: localhost
+    ports:
+      - 8083:8083
+    expose:
+      - 8083
+
+  zookeeper:
+    container_name: zookeeper
+    image: zookeeper:latest
+    ports:
+      - 2181:2181
+    expose:
+      - 2181
+    network_mode: "host"
+    hostname: localhost
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000000000
+
+  kafka:
+    container_name: kafka
+    image: wurstmeister/kafka:latest
+    ports:
+      - 9092:9092
+    expose:
+      - 9092
+    depends_on:
+      - zookeeper
+    network_mode: "host"
+    hostname: localhost
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: localhost:2181
+      KAFKA_MESSAGE_MAX_BYTES: 1000000000
+
+  user-authentication-service:
+    image: user-authentication-service:1.0.0
+    build: user-authentication-service/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mysql
+      - eureka-server
+      - zuul-api
+      - kafka
+    ports:
+      - 8091:8091
+    expose:
+      - 8091
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: LoginDb
+      MYSQL_USER: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "YES"
+    volumes:
+      - "~/data/datasql:/var/lib/mysql"
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+
+  mongo:
+    image: mongo:3.4-xenial
+    restart: always
+    network_mode: "host"
+    volumes:
+      - "~/data/datamongo:/data/db"
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+
+  user-service:
+      image: user-service:1.0.0
+      build: user-service/
+      restart: always
+      network_mode: "host"
+      depends_on:
+        - mongo
+        - eureka-server
+        - zuul-api
+        - kafka
+      ports:
+        - 8050:8050
+      expose:
+        - 8050
+
+  standalone-media-service:
+    image: standalone-media-service:1.0.0
+    build: standalone-media-service/
+    restart: always
+    network_mode: "host"
+    volumes:
+      - "~/data/videos:/root/uploads"
+    depends_on:
+      - kafka
+      - mongo
+      - eureka-server
+      - zuul-api
+    ports:
+      - 8072:8072
+    expose:
+      - 8072
+
+  episodic-media-service:
+    image: episodic-media-service:1.0.0
+    build: episodic-media-service/
+    restart: always
+    network_mode: "host"
+    depends_on:
+      - kafka
+      - mongo
+      - eureka-server
+      - zuul-api
+    ports:
+      - 8071:8071
+    expose:
+      - 8071
+
+  recommendation-service:
+    image: recommendation-service:1.0.0
+    build: recommendation-service/
+    restart: always
+    network_mode: "host"
+    depends_on:
+      - kafka
+      - neo4j
+      - eureka-server
+      - zuul-api
+    ports:
+      - 8082:8082
+    expose:
+      - 8082
+
+  payment-service:
+    image: payment-service:1.0.0
+    build: payment-service/
+    restart: always
+    network_mode: "host"
+    depends_on:
+      - mongo
+      - kafka
+      - zuul-api
+      - eureka-server
+    ports:
+      - 8070:8070
+    expose:
+      - 8070
+
+  neo4j:
+    image: neo4j:latest
+    restart: always
+    network_mode: host
+    volumes:
+      - "~/neo4j/data:/data"
+    ports:
+      - 7474:7474
+      - 7687:7687
+    expose:
+      - 7474
+      - 7687
+
+  manoranjan:
+    build:
+      context: ./manoranjan
+      args:
+        NG_CLI_ANYALYTICS: ci
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8081:8081
+    restart: always
+    environment:
+      NG_CLI_ANYALYTICS: ci
+
+  red5:
+    image: mondain/red5
+    restart: always
+    network_mode: "host"
+    volumes:
+      - "~/data/videos:/opt/red5/webapps/vod/streams"
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    restart: always
+    network_mode: host
+    hostname: localhost
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+    network_mode: "host"
+    hostname: localhost

@@ -1,0 +1,41 @@
+  #container {
+      width: 100%;
+      margin: 3.5em auto;
+      padding: 20;
+      margin-bottom: 0%;
+  }
+  
+  #container H4 {
+      padding-top: 0;
+      margin-bottom: 20px;
+  }
+  
+  */ #left,
+  #right {
+      margin: 20px;
+      
+  }
+  
+  .latest {
+      height: 247px;
+      width: 232px;
+      border-radius: 14px;
+      padding: 10px;
+      margin-bottom: 30px;
+  }
+  
+  .items:hover img {
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+  }
+  
+  h4 {
+      text-align: center;
+      font-family: 'Merriweather', serif;
+  }
+  
+  h3 {
+      margin-left: 80px;
+      font-family: 'Merriweather', serif;
+      color: white;
+  }

@@ -1,0 +1,25 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <app-nav></app-nav>
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <h2>Login </h2>
+        </div>
+
+        <!-- Login Form -->
+        <form action="login">
+            <input type="text" #emailId class="fadeIn second" placeholder="Enter your email">
+            <input type="password" #password class="fadeIn third" placeholder="Password">
+            <input class="new" type="submit" (click)="submit(emailId.value,password.value)"  value="Login">
+            <!-- <button class="new" type="submit" (click)="submit(emailId.value,password.value)"> LogIn</button> -->
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <h6>Don't have acount? </h6>
+            <a class="underlineHover" routerLink="/register">Register Here</a>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

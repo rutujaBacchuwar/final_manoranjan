@@ -1,0 +1,93 @@
+<app-nav></app-nav>
+<section>
+<div class="container" routerLink="/standaloneepisodic">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item1">
+            <a class="nav-link active" data-toggle="tab" href="#standalone">Standalone</a>
+        </li>
+        <li class="nav-item2">
+            <a class="nav-link" data-toggle="tab" href="#episodic">Episodic</a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="standalone" class="container tab-pane active"><br>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-2">
+                        <label>Title:</label>
+                    </div>
+                    <div class="col-5">
+                        <input  #title class="form-control" >
+                        <!-- <textarea #title rows="1" cols="30"></textarea> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Category:</label>
+                    </div>
+                    <div class="col-5">
+                        <select class="selectpicker form-control" #category >
+                            <option data-content='<span class="flag-icon flag-icon-us"></span> English'>Movie</option>
+                            <option data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Documentary</option>
+                       </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Synopsis:</label>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control"  #synopsis rows="5" ></textarea>
+                    </div>
+                </div>
+                    <div class="btn btn-info btn-md" (click)="sendStandalone(title.value,category.value,synopsis.value)">Save
+                   
+
+                </div>
+            </div>
+        </div>
+        <!-- standalone panel closed-->
+        <div id="episodic" class="container tab-pane fade"><br>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-2">
+                        <label>Title:</label>
+                    </div>
+                    <div class="col-5">
+                            <input  #title1 class="form-control" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Category:</label>
+                    </div>
+                    <div class="col-5">
+                        <select class="selectpicker form-control" #category1 >
+              <option data-content='<span class="flag-icon flag-icon-us"></span> English'>TV Episodes</option>
+              <option data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Web Series</option>
+            </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label>Synopsis:</label>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control" #synopsis1 rows="5" ></textarea>
+                    </div>
+                </div>
+            
+                    <div class="btn btn-info btn-md " id="saveButton" (click)="sendEpisodic(title1.value,category1.value,synopsis1.value)">Save
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+     <!-- episodic panel closed-->
+    <div class="footer">
+    <app-footer></app-footer>
+    </div>

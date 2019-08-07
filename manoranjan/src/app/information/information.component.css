@@ -1,0 +1,47 @@
+div {
+    width: 1370px;
+    height: 500px;
+    margin-left: 5%;
+    color: white;
+    font-family: 'Merriweather', serif;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.jumbotron {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.two h3 {
+    margin-left: 700px;
+}
+
+.two p {
+    margin-left: 700px;
+}
+
+.two a {
+    margin-left: 700px;
+}
+
+.one {
+    background-image: url("../../assets/e6.jpg");
+}
+
+.two {
+    margin-top: 0%;
+    background-image: url("../../assets/e3.jpg");
+}
+
+.three {
+    background-image: url("../../assets/e7.jpg");
+}
+
+.btn {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 14px;
+    background: #000;
+}

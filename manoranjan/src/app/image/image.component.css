@@ -1,0 +1,257 @@
+.main {
+    background-color: black;
+    font-family: 'Merriweather', serif;
+}
+
+.detail-page {
+    min-height: calc(100vh - 300px);
+    padding-top: 90px;
+    margin-top: 10px;
+}
+
+.detail-page .masthead-container {
+    margin: 0 auto;
+    max-width: 1170px;
+    width: calc(100% - 80px);
+}
+
+.masthead-card {
+    background: #000;
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.masthead-card .image-holder {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.masthead-card .image-holder .imageloader {
+    max-width: 790px;
+    width: 790px;
+    height: 400px;
+    float: right;
+    transition: 1s opacity;
+    display: flex;
+}
+
+.masthead-card .image-holder .imageloader img {
+    align-self: center;
+    width: 105%;
+    height: 100%;
+}
+
+.masthead-card .image-gradient {
+    top: 0;
+    right: 590px;
+    width: 200px;
+    height: inherit;
+    content: '';
+    position: absolute;
+}
+
+.masthead-card .footer-gradient {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.masthead-card .slider-caption {
+    height: 100%;
+    background: 0 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.masthead-card .cover-link {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@media only screen and (max-width: 1080px) and (min-width: 800px) {
+    .masthead-card .slider-caption .action-holder {
+        left: 4%;
+        width: 94%;
+    }
+}
+
+.masthead-card .slider-caption {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+.masthead-card .slider-caption {
+    pointer-events: all;
+}
+
+.meta-data {
+    padding: 2px;
+}
+
+.action-container {
+    margin-left: 20px;
+    margin-top: 310px;
+    border: none;
+}
+
+.action-container>.action-data {
+    display: flex;
+    color: #fff;
+}
+
+.action-content .action-primary-txt {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.masthead-card .slider-caption .click-icon {
+    display: inline-block;
+    width: 76px;
+    text-align: center;
+    height: 56px;
+}
+
+.masthead-card .slider-caption .watch-share .click-icon .click-icon-wrapper {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.masthead-card .slider-caption .watch-share .click-icon .click-icon-wrapper .icon-title {
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p,
+ul {
+    margin: 0;
+}
+
+.masthead-card .slider-caption .watch-share .social-holder .social-wrap {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .24);
+    display: none;
+    position: absolute;
+    left: -130px;
+    bottom: -50px;
+    background-color: #fff;
+    padding: 11px 15px 6px 25px;
+    border-radius: 9px;
+    text-align: center;
+    z-index: 2;
+}
+
+.social-wrap {
+    margin-bottom: 17px;
+}
+
+.slide-in {
+    animation: slidein .6s;
+}
+
+.share-wrap {
+    display: flex;
+}
+
+@media only screen and (max-width: 1080px) and (min-width: 800px) {
+    .masthead-card .slider-caption .content-holder {
+        left: 4%;
+    }
+}
+
+.masthead-card .content-holder {
+    margin-left: 0px;
+    position: absolute;
+    word-wrap: break-word;
+    width: 30%;
+    top: 30px;
+    pointer-events: none;
+}
+
+.masthead-card .slider-caption,
+.masthead-card .content-holder {
+    left: 2%;
+    width: 30%;
+}
+
+.masthead-card .content-holder .toptitle {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    color: #fff;
+}
+
+.masthead-card .content-holder .content-meta {
+    color: #fff;
+    opacity: .6;
+    margin-bottom: 2px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.masthead-card .content-holder .description {
+    margin-bottom: 14px;
+    opacity: .8;
+    line-height: 1.45;
+    font-size: 16px;
+    color: #fff;
+    white-space: normal;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    max-height: 400px;
+    font-weight: 400;
+}
+
+.watchlist-holder .bottom-right {
+    position: absolute;
+    bottom: 50px;
+    right: 170px;
+}
+
+.watchlist-holder .bottom-right2 {
+    position: absolute;
+    bottom: 30px;
+    right: 150px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.social-holder .bottom-right {
+    position: absolute;
+    bottom: 45px;
+    right: 60px;
+}
+
+.social-holder .bottom-right2 {
+    position: absolute;
+    bottom: 27px;
+    right: 50px;
+    color: #fff;
+    font-size: 16px;
+}

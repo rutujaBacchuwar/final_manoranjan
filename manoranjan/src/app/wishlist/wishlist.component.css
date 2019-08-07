@@ -1,0 +1,51 @@
+.total {
+    background-color: black;
+    font-family: 'Merriweather', serif;
+}
+
+.container {
+    padding-top: 90px;
+    padding-bottom: 200px;
+    margin-left: 180px;
+    top: 8px;
+    left: 16px;
+}
+
+.container-fluid {
+    margin-top: -10px;
+}
+
+h4 {
+    font-family: 'Merriweather', serif;
+    color: white;
+    font-size: 22px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.image {
+    display: block;
+    width: 165px;
+    height: 180px;
+    border-radius: 14px;
+    margin-left: 12px;
+    margin-top: 30px;
+}
+
+.col-2 {
+    float: left;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+app-footer {
+    margin-top: 23%;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}

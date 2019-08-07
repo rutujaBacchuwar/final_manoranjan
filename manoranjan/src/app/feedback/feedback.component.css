@@ -1,0 +1,31 @@
+.about {
+    margin-right: 33%;
+    margin-left: 33%;
+    color: white;
+    font-family: 'Merriweather', serif; 
+    overflow: hidden;
+}
+h3{
+    margin-top: 130px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+h3 i{
+    color: #36c5ff;
+}
+.btn {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 14px;
+    background: #36c5ff;
+    margin-left: 42%;
+     
+}
+app-footer {
+    position: fixed;
+    width: 100%;
+    margin-left: 42%; 
+    margin-bottom: 8px;  
+
+}

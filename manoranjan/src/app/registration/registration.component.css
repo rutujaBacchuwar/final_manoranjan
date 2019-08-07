@@ -1,0 +1,367 @@
+
+section{
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    height:100%; 
+  }
+  
+  #outerMatCard{
+    margin-top: 75px;
+  }
+  #error{
+    margin-left: 45%;
+  }
+  .btn-color{
+    color:white;
+  }
+  .example-card{
+    font-family: 'Merriweather', serif;
+    width:800px;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    margin-left:-80px;
+    height: 500px;
+    box-shadow: none;
+  } 
+  mat-card-content .imageCard{
+   margin-left: 40px;
+  }
+  #first-card{
+  margin-top: -14px;
+  }
+  #second-card{
+    margin-top: -14px;
+    }
+    #third-card{
+      margin-top: -14px;  
+    }
+    
+  section {
+      font-family: 'Merriweather', serif;
+      font-weight: bold;
+      height: 100%;
+  }
+  
+  #outerMatCard {
+      margin-top: 61px;
+  }
+  
+  #error {
+      margin-left: 45%;
+  }
+  
+  .example-card {
+      font-family: 'Merriweather', serif;
+      width: 800px;
+      margin-top: 10px;
+      margin-bottom: 1px;
+      margin-left: -80px;
+      height: 500px;
+      box-shadow: none;
+  }
+  
+  #first-card {
+      margin-top: -14px;
+  }
+  
+  #second-card {
+      margin-top: -14px;
+  }
+  
+  #third-card {
+  
+      margin-top: -14px;
+  }
+  form .row1{
+    margin-top: 25px;
+  }
+  
+  #fourth-card {
+      margin-top: -14px;
+  }
+  
+  label {
+      font-size: 15px;
+      font-family: 'Merriweather', serif;
+  
+  }
+  
+  form .row1 {
+      margin-top: 60px;
+  }
+  
+  #password {
+      margin-left: 25px;
+  }
+  
+  #passwordIcon {
+      margin-left: -30px;
+  }
+  
+  #age {
+      margin-left: -15px;
+  }
+  
+  .fill-remaining-space {
+      flex: 1 1 auto;
+      margin-top: 10px;
+  }
+  
+  mat-toolbar {
+      margin-top: 10px;
+      background-color: white;
+  }
+  
+  table {
+      margin: auto;
+  }
+  
+  
+  img:hover{
+   opacity: 0.5; 
+  }
+  .mat-button-toggle {
+      border: 0;
+  }
+ 
+  
+  .mat-button-toggle-checked {
+      border: 2px solid black;
+      background-color: rgb(177, 208, 238);
+  }
+  
+  mat-card {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 4%;
+  }
+  
+  p,
+  tr td,
+  .form-control,
+  button,
+  .headingStyle,
+  mat-radio-button {
+      font-family: 'Merriweather', serif;
+  }
+  
+  .mat-form-field-infix {
+      top: -0.25em;
+  }
+  
+  mat-grid-list {
+      margin-bottom: -100px;
+  }
+  
+  mat-grid-list mat-grid-tile{
+    height:100px;
+    width:100px
+  }
+  #biopicImage{
+    border-radius: 4px;
+  }
+  #mythologyImage{
+    border-radius: 4px;
+  }
+    #firstImage{
+    margin-left:80px;
+  }
+  #thirdImage{
+    margin-left: -80px;
+  }
+  #fourthImage{
+    margin-left:80px;
+  }
+  #sixthImage{
+    margin-left: -80px;
+  }
+  #seventhImage{
+    margin-left: 80px;
+  }
+  
+  #ninthImage{
+    margin-left: -20px;
+  } 
+  #firstgrid{
+    margin-top: -60px;
+  }
+  mat-button-toggle {
+      height: 40%;
+      width: 60%;
+      margin-right: 10px;
+  }
+ 
+  #firstImage {
+      margin-left: 100px;
+  }
+  
+  #thirdImage {
+      margin-left: -100px;
+  }
+  
+  #fourthImage {
+      margin-left: 100px;
+  }
+  
+  #sixthImage {
+      margin-left: -100px;
+  }
+  
+  #seventhImage {
+      margin-left: 100px;
+  }
+  
+  #ninthImage {
+      margin-left: -100px;
+  }
+  
+  #firstgrid {
+      margin-top: -30px;
+  
+  }
+  
+  .nextButton {
+      margin-left: 20px;
+  }
+  
+  #gridimages {
+      margin-bottom: -50px;
+      color:white;
+  }
+  
+  mat-button-toggle img {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 0;
+      height: 80px;
+      width: 120px;
+  }
+  
+  mat-grid-list {
+      margin-top: -100px;
+      margin-bottom: -150px;
+  }
+  
+  .mark {
+      color: red;
+  }
+  
+  .mat-form-field-infix {
+      top: -0.25em;
+  }
+  
+  .form-horizontal {
+      text-align: center;
+      margin-left: 22%;
+      margin-right: 22%;
+  }
+  
+  .form-group {
+      text-align: center;
+  }
+  
+  .column {
+      float: left;
+      width: 45%;
+      padding: 0 10px;
+  }
+  
+  
+  /* Remove extra left and right margins, due to padding */
+  
+  .row {
+      margin: 0 -5px;
+  }
+  
+  
+  /* Clear floats after the columns */
+  
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  
+  
+  /* Responsive columns */
+  
+  @media screen and (max-width: 600px) {
+      .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+      }
+  }
+  
+  .user-profile {
+      width: 50%;
+      margin-left: 24px;
+      margin-top: 10px;
+  }
+  
+  .person-icon {
+      width: 200px;
+      height: 200px;
+  }
+  
+  form {
+      padding-top: 30px;
+      border-block-start-color: black;
+      border-block-end-color: black;
+      border-block-start-width: 10px;
+  }
+  
+  img {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 100%;
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  
+  .user-profile{
+    width: 50%;
+    margin-left: 24px;
+    margin-top: 10px;
+  }
+    .person-icon{
+        width: 200px;
+        height: 200px;
+    }
+  form{
+  padding-top: 30px;
+  border-block-start-color: black;
+  border-block-end-color: black;
+  border-block-start-width: 10px;
+  }
+  img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height:100%;
+    width: 100%;
+  } 
+  #success{
+    margin-top: -20px;
+    font-family: 'Merriweather', serif;
+    color:#36c5ff;
+  }
+  #success img{
+    height:50px;
+    width:50px;
+  }
+  #submit{
+      margin-top: 110px; margin-left: -20px;
+  }
+  h3{
+    margin-top: 180px;
+  
+  }
+  .mat-stroked-button{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 14px;
+    background: #36c5ff;
+    width:20%;
+    padding:5px;
+  }
+  

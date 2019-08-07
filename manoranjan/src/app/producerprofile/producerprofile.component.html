@@ -1,0 +1,80 @@
+<div class="container emp-profile" routerLink="/">
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="profile-img">
+                    <img src="../../assets/{{photo}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h4>
+                        Profile
+                    </h4>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{producers?.name}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{producers?.emailId}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Age</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{producers?.age}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Gender</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{producers?.gender}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Mobile</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{producers?.mobileNo}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br>
+    <div class="button">
+        <input type="Edit Profile" class=" btn btn-info" (click)="sendEmail(producers?.emailId)" value="Edit Profile">&nbsp;
+
+        <input type="Upload" class="btn btn-info btn-mid" routerLink="/standaloneepisodic" value="Upload Media">
+    </div>
+
+    <app-uploadedvideos [heading]="heading1" [list]="standalone1"></app-uploadedvideos>
+    <app-uploadedvideos [heading]="heading2" [list]="episodic1"></app-uploadedvideos>
+ </div>

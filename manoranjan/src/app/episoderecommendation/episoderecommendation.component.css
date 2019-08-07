@@ -1,0 +1,42 @@
+#container {
+    width: 80%;
+    margin: 0em auto;
+    padding: 10;
+    background: #fff;
+    font-family: 'Merriweather', serif;
+}
+
+#container H4 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.items {
+    max-width: 180px;
+    height: 160px;
+    background: #ECECEC;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.items:hover img,
+.items.hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    border-radius: 5px;
+}
+
+.latest {
+    border-radius: 5%;
+}
+
+#left,
+#right {
+    margin: 20px;
+}
+
+.latest {
+    height: 180px;
+    width: 160px;
+}

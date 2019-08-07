@@ -1,0 +1,82 @@
+.col-lg-3 {
+    color: white;
+}
+
+.col-md-3 {
+    color: white;
+}
+
+.text-center {
+    padding-top: 30px;
+}
+
+h2 {
+    color: #36e5ff;
+    margin-left: 15%;
+}
+
+.row {
+    overflow: hidden;
+}
+
+.btn-info {
+    margin-right: 5%;
+    margin-left: 27%;
+}
+
+.form-horizontal {
+    overflow: hidden;
+}
+
+personal-info {
+    margin-top: 75px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* div{
+    overflow-x:auto;
+    overflow-y: hidden;
+} */
+
+.container {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 30%;
+    /* left: 0; */
+    overflow: hidden;
+    width: auto;
+    height: 500px;
+}
+
+
+/* .footer {
+    margin-top: -70px;
+    margin-bottom: -100px;
+} */
+
+.btn {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 14px;
+    background: #36c5ff;
+    color: white;
+}
+
+.col-md-8 {
+    align-items: center;
+}
+
+.form-group {
+    align-items: center;
+    overflow: hidden;
+}
+
+app-footer {
+    margin-top: 3%;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}

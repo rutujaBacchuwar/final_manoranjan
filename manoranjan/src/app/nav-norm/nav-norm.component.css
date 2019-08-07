@@ -1,0 +1,57 @@
+.btn-group i {
+    color: rgb(20, 19, 19);
+}
+
+nav {
+    position: fixed;
+    z-index: -1;
+}
+
+li.menu-item {
+    margin: 0 0 10px 0;
+    transform: translate(15px, -5px);
+    position: absolute;
+    padding-right: 15px;
+    font-family: 'Merriweather', serif;
+}
+
+.nav-item {
+    padding-right: 50px;
+}
+
+.navbar-brand {
+    padding-right: 20px;
+}
+
+.form-inline {
+    padding-left: 200px;
+    padding-right: 20px;
+}
+
+.form-inline i {
+    color: white;
+}
+
+a.navbar-brand {
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+    color: white;
+}
+
+.nav-item a {
+    font-family: 'Merriweather', serif;
+    color: white;
+}
+
+.nav-item a:hover {
+    background-color: #36c5ff;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    background-color: #343a40;
+}
+
+.dropdown-item {
+    color: white;
+}

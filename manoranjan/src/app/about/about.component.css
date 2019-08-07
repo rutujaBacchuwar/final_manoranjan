@@ -1,0 +1,42 @@
+div.main {
+    background-color: black;
+    color: white;
+} 
+.section-subtitle{
+    margin-bottom: 7px;
+    margin-left: 7px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
+    border-left: 3px solid #36c5ff;
+    font-family: 'Merriweather', serif;
+}
+.btn-color-background{
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    line-height: 2;
+    text-align: center;
+    text-transform: uppercase;
+}
+.btn-color-background:hover{
+    color: #36c5ff;
+    font-weight: bold;
+    background: transparent;
+}
+.card{
+    margin-top: 20px;
+    background-color: #1f3c47;
+    height: 250px;
+}
+.card-title{
+    margin-left: 2px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.card-text{
+    text-align: justify;
+    font-size: 14px;
+}

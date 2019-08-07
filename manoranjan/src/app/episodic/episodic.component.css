@@ -1,0 +1,386 @@
+.container {
+    height: 378px;
+    margin-left: 15px;
+}
+#container2{
+    margin-left: -80px;
+}
+h3 {
+    margin-top: 250px;
+    color: #36c5ff;
+}
+h6{
+    font-family: 'Merriweather',serif;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+div#success.container3 {
+    color: #36c5ff;
+}
+.episodeAdd{
+    display: flex;
+}
+
+.example-card {
+    max-width: 100%;
+    width: 100%;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+section{
+    margin-left: 160px;
+    margin-right: 145px;  
+}
+mat-horizontal-stepper{
+    height: 100%;
+    margin-left: 100px;
+    margin-right:100px; 
+}
+mat-horizontal-stepper form{
+    margin-left: 16%; 
+    margin-right: 15%;   
+  }
+ 
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+#language {
+    margin-top: 50px;
+}
+
+#input {
+    margin-left: 10px;
+}
+
+#input1 {
+    margin-left: 15px;
+}
+
+#poster {
+    margin-left: -10px;
+}
+
+#type {
+    margin-left: -15px;
+}
+#button1{
+    margin-top: 200px;
+}
+#episodeList {
+    margin-left: 220px;
+    color: blue;
+}
+
+#episodeList td {
+    width: 100px;
+}
+
+mat-toolbar {
+    background-color: white;
+}
+
+.addButton {
+    margin-left: 28%;
+}
+.addButton3 {
+    margin-left: 36%;
+}
+#button2{
+margin-top: -10px;
+}
+#button3{
+    margin-top: 50px;
+}
+table {
+    margin: auto;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+ul {
+    color: blue;
+    list-style-type: none;
+}
+
+ul li table {
+    margin-left: 132px;
+}
+
+ul li table tr td {
+    border: 1px solid black;
+}
+
+.name {
+    margin-left: -10px;
+}
+
+.role {
+    margin-left: -5px;
+}
+
+mat-card {
+    height: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+}
+#sixseven{
+margin-left: 0px; margin-right: 0px; margin-top: -50px;
+}
+#crewcastList{
+    width:100%;margin-bottom: 10px;
+}
+div.card{
+    background-color: black;color:white;font-family:'Merriweather', serif;font-weight: bold;height:100px;width:150px;margin-bottom: 10px;
+}
+div.card2
+{
+    background-color:black;color:white;font-family:'Merriweather', serif;font-weight: bold;height:100px;width:150px;margin-bottom: 10px;}
+
+.content1 {
+    margin-left: 10px;
+}
+
+.form3 .form3-heading {
+    font-weight: bold;
+    margin-left: -64%;
+}
+
+.form3 .videoFile {
+    margin-left: -40px;
+}
+
+.form3 .description {
+    margin-left: -38px;
+}
+
+.form3 .poster {
+    margin-left: -60px;
+}
+
+.form3 .releaseDate {
+    margin-left: -20px;
+}
+
+p,
+tr td,
+.form-control,
+button,
+.headingStyle,
+mat-radio-button {
+    font-family: 'Merriweather', serif;
+}
+
+mat-button-toggle {
+    height: 125px;
+    width: 175px;
+    margin-right: 10px;
+}
+
+.mark {
+    color: red;
+}
+
+.form-horizontal {
+    text-align: center;
+    margin-left: 22%;
+    margin-right: 22%;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.column {
+    float: left;
+    width: 45%;
+}
+#success{
+    margin-top: -60px;
+    font-family: 'Merriweather', serif;
+    color:#36c5ff;
+  }
+#publish{
+    margin-top: 200px;
+  }
+  #fourth-card {
+    margin-top: -14px;
+}
+/* Remove extra left and right margins, due to padding */
+
+.row {
+    margin: 0 -5px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive columns */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+}
+#name {
+    margin-left: -20px;
+}
+
+#role {
+    margin-left: -33px;
+}
+#crewInput{
+    margin-top: 50px;
+}
+#castInput{
+    margin-top: 50px;
+}
+#studioName{
+    margin-top: 55px;
+}
+
+#screenName {
+    margin-left: -10px;
+}
+
+#realName {
+    margin-left: -60px;
+}
+
+/* Style the counter cards */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+#outerMatCard{
+    margin-top:75px;
+  }
+.person-icon {
+    width: 200px;
+    height: 200px;
+}
+
+form {
+    border-block-start-color: black;
+    border-block-end-color: black;
+    border-block-start-width: 10px;
+}
+
+mat-form-field input {
+    margin-top: -70px;
+}
+
+#episodeNumber {
+    margin-top: 100px;
+}
+
+#input7 {
+    margin-top: 100px;
+}
+
+#videoFile {
+    margin-left: -23px;
+}
+
+#input8 {
+    margin-left: 25px;
+}
+
+#upload {
+    margin-left: -20px;
+    margin-top: -34px;
+    width: 80px;
+}
+
+#description {
+    margin-left: -16px;
+}
+/* .container3{
+    margin-top: 10%;
+    margin-left: 28%;
+  } */
+#input9 {
+    margin-left: 16px;
+}
+
+#poster1 {
+    margin-left: -33px;
+}
+
+#input10 {
+    margin-left: 33px;
+}
+
+#releaseDate {
+    margin-left: -10px;
+    margin-top: 22px;
+}
+
+#date {
+    margin-left: -58px;
+}
+#btn1{
+    border-radius: 8px;
+  background: #36c5ff;
+  padding: 0;
+  color: white;
+  height: 30px;
+  width: 30px;
+  }
+  .mat-raised-button{
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: 14px;
+    background: #36c5ff;
+    color: white;
+  }
+  .mat-stroked-button{
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: 14px;
+    background: #36c5ff;
+    color: white;
+    width:20%;
+    padding:3px;
+  }
+  button.addButton{
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: 14px;
+    background: #36c5ff;
+    color: white;
+  }
+  button.addButton3{
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    /* border-radius: 14px;
+    background: #36c5ff;
+    color: white;
+    width:15%;
+    padding:3px; */
+    border-radius: 8px;
+    background: #36c5ff;
+    padding: 0;
+    color: white;
+    height: 30px;
+    width: 30px;
+  }
