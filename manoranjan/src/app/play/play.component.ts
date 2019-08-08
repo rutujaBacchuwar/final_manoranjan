@@ -3,6 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { UserService } from '../user.service';
 
+import * as videojs from 'video.js';
+import "@videojs/http-streaming";
+import "videojs-flash";
+import "videojs-contrib-eme";
+import "dashjs";
 
 @Component({
   selector: 'app-play',
@@ -17,6 +22,7 @@ export class PlayComponent implements OnInit, AfterViewInit {
   id;
   status: string = "false";
   videoAvailable = false;
+  video_xyz;
   @ViewChild('videoPlayer', { static: false }) video: ElementRef;
   constructor(private activatedRoute: ActivatedRoute, private sanitizer: DomSanitizer, private userService: UserService) {
   }
@@ -24,6 +30,18 @@ export class PlayComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     console.log(this.video)
     // this.video.nativeElement.play();
+
+    // videojs.options.flash.swf = this.url.changingThisBreaksApplicationSecurity
+    this.video_xyz = videojs(this.video.nativeElement, {
+      "width": "100%"
+    })
+
+    // this.video_xyz.src({
+    //   src: this.url.changingThisBreaksApplicationSecurity,
+    //   type: "rtmp/mp4",
+    // })
+
+    this.video_xyz.play();
 
   }
   ngOnInit() {
