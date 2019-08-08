@@ -35,13 +35,13 @@ export class ProducerprofileComponent implements OnInit {
   constructor(private userService: UserService,private router:Router,private standaloneService: StandaloneService,private episodicService:EpisodicService) { }
 
   ngOnInit() {
-    this.producer.emailId = sessionStorage.getItem('email');
+    // this.producer.emailId = sessionStorage.getItem('email');
     console.log(this.producer.emailId);
-    this.userService.getByEmailId(this.producer.emailId).subscribe(data => {
-      this.producers = data;
+    this.userService.getByEmailId(sessionStorage.getItem('email')).subscribe(data => {
+      this.producer = data;
       console.log("POST Request is successful ", data);
-      console.log("gender:",this.producers.gender);
-      if(this.producers.gender=='male'|| this.producers.gender=='Male')
+      console.log("gender:",this.producer.gender);
+      if(this.producer.gender=='male'|| this.producer.gender=='Male')
       {
         this.photo='maleDemo.png';
         console.log("male is here");

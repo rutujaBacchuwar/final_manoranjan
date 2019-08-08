@@ -52,7 +52,7 @@ export class PlayComponent implements OnInit, AfterViewInit {
       console.log(this.url);
     });
 
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl("rtmp://localhost:1935/vod/mp4:" + this.url);
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl("rtmp://13.235.52.81:1935/vod/mp4:" + this.url);
     console.log(this.url, "laskjdlkajs")
     this.videoAvailable = true;
     if (sessionStorage.getItem('email') !== null) {

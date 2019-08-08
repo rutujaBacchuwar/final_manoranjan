@@ -10,8 +10,8 @@ export class PaymentService {
   constructor(private http:HttpClient) { }
   save(userpayment:Userpayment){
     console.log("userpayment - "+userpayment.mydate)
-    // return this.http.post("http://13.235.52.81:8083/payment-service/user",userpayment,{responseType: 'text'});
-    return this.http.post("http://localhost:8083/payment-service/user",userpayment,{responseType: 'text'});
+     return this.http.post("http://13.235.52.81:8083/payment-service/user",userpayment,{responseType: 'text'});
+    //return this.http.post("http://localhost:8083/payment-service/user",userpayment,{responseType: 'text'});
   }
 
 }

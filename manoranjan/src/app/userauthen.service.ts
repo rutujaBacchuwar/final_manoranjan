@@ -9,7 +9,11 @@ export class UserauthenService {
   headers = new HttpHeaders({'Access-Control-Allow-Origin' : '*'})
   constructor(private http:HttpClient) { }
   login(user:Userauthen){
-    // return this.http.post<Userauthen>("http://13.235.52.81:8083/user-authentication-service/user",user);
-    return this.http.post<Userauthen>("http://localhost:8083/user-authentication-service/user",user);
+     return this.http.post<Userauthen>("http://13.235.52.81:8083/user-authentication-service/user",user,{
+      headers:new HttpHeaders({
+        'Access-Control-Allow-Origin' : '*'
+      })
+     });
+   // return this.http.post<Userauthen>("http://localhost:8083/user-authentication-service/user",user);
    }
 }
