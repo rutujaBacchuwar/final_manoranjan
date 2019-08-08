@@ -25,15 +25,15 @@ public class EpisodicMediaConsumer {
     DocumentaryRepository documentaryRepository;
 
     @Autowired
-    ViewerRepository viewerRepository;
+    UserRepository userRepository;
 
     @KafkaListener(topics = "saveUser", groupId = "Group_UserObject")
     public void consumeJson(@Payload User user){
        System.out.println("=================published Json object consumer ===================   " +user.toString());
-       viewerRepository.createViewer(user.getName(),user.getEmailId());
+       userRepository.createUser(user.getName(),user.getEmailId());
         for (int i = 0; i < user.getGenre().size(); i++)
         {
-            viewerRepository.createGenreRelation(user.getEmailId(), user.getGenre().get(i));
+            userRepository.createGenreRelation(user.getEmailId(), user.getGenre().get(i));
         }
     }
 

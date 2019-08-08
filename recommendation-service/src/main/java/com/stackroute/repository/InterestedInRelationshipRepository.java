@@ -13,9 +13,9 @@ import java.util.Collection;
 @Repository
 public interface InterestedInRelationshipRepository extends Neo4jRepository<InterestedInRelationship, String> {
 
-    @Query("MATCH (v:Viewer) WHERE v.emailId={emailId}"+"-[:Interested_In]->(g:Genre)<-[:Of_Genre]-(d:Documentary)"+"RETURN d")
+    @Query("MATCH (v:User)-[r:Interested_In]->(g:Genre)<-[:Of_Genre]-(d:Documentary) WHERE v.emailId={emailId} RETURN d")
     Collection<Documentary> getRecommendedDocumentary(@Param("emailId") String emailId);
 
-    @Query("MATCH (v:Viewer) WHERE v.emailId={emailId}"+"-[:Interested_In]->(g:Genre)<-[:Of_Genre]-(m:Movie)"+"RETURN m")
+    @Query("MATCH (v:User)-[r:Interested_In]->(g:Genre)<-[:Of_Genre]-(m:Movie) WHERE v.emailId={emailId} RETURN m")
     Collection<Movie> getRecommendedMovie(@Param("emailId") String emailId);
 }

@@ -28,7 +28,7 @@ public interface MediaService {
     public WebSeries saveWebSeries(WebSeries webSeries) throws MediaAlreadyExistException;
 
     public Collection<Documentary> getRecInterestDoc(String emailId);
-    public Collection<Movie> getRecInterestMovie(String emilId);
+    public Collection<Movie> getRecInterestMovie(String emailId);
 
     public Collection<Documentary> getRecLangDocumentary(String emailId);
     public Collection<Movie> getRecLangMovie(String emailId);

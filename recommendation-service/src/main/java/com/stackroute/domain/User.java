@@ -19,4 +19,28 @@ public class User {
     private String emailId;
     private String name;
     private List<String> genre;
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<String> getGenre() {
+        return genre;
+    }
+
+    public void setGenre(List<String> genre) {
+        this.genre = genre;
+    }
 }

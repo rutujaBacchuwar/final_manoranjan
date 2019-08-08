@@ -232,8 +232,8 @@ public class MediaServiceImpl implements MediaService {
         return interestedInRelationshipRepository.getRecommendedDocumentary(emailId);
     }
 
-    public Collection<Movie> getRecInterestMovie(String emilId){
-        return interestedInRelationshipRepository.getRecommendedMovie(emilId);
+    public Collection<Movie> getRecInterestMovie(String emailId){
+        return interestedInRelationshipRepository.getRecommendedMovie(emailId);
     }
 
     public Collection<Documentary> getRecLangDocumentary(String emailId){
