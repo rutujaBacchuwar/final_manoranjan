@@ -14,6 +14,7 @@ import java.util.Collection;
 @RestController
 @Api(value = "RecommendationServiceApi",produces = MediaType.APPLICATION_JSON_VALUE)
 @RequestMapping("/rest/neo4j")
+@CrossOrigin("*")
 public class MediaController {
 
     @Autowired
@@ -123,64 +124,62 @@ public class MediaController {
     //getting all the viewers
     @ApiOperation("Get viewer")
     @GetMapping("/viewers")
-    public Collection<Viewer> getViewer() throws ViewerNotFoundException {
+    public Collection<User> getViewer() throws ViewerNotFoundException {
         return viewerService.getAll();
     }
 
     //posting the viewer
     @ApiOperation("Save viewer")
     @PostMapping("/viewer")
-    public Viewer saveViewer(@RequestBody Viewer viewer) throws ViewerAlreadyExistException {
-        return viewerService.saveViewer(viewer);
+    public User saveViewer(@RequestBody User user) throws ViewerAlreadyExistException {
+        return viewerService.saveViewer(user);
     }
 
     //getting viewer by emailId
     @ApiOperation("Get by email")
     @GetMapping("/viewer/{email}")
-    public Viewer getByEmailId(@PathVariable("email") String email) throws ViewerNotFoundException {
+    public User getByEmailId(@PathVariable("email") String email) throws ViewerNotFoundException {
         return viewerService.getViewerByEmailId(email);
     }
 
     //updating viewer details
     @ApiOperation("Update details")
     @PutMapping("/viewer")
-    public Viewer updateDetails(@RequestBody Viewer viewer) throws ViewerNotFoundException {
-        return viewerService.updateDetails(viewer);
+    public User updateDetails(@RequestBody User user) throws ViewerNotFoundException {
+        return viewerService.updateDetails(user);
     }
 
     //deleting viewer
     @ApiOperation("delete viewer")
     @DeleteMapping("/viewer")
-    public Collection<Viewer> deleteViewer(@RequestBody Viewer viewer) throws ViewerNotFoundException {
-        return viewerService.deleteViewer(viewer.getEmailId());
+    public Collection<User> deleteViewer(@RequestBody User user) throws ViewerNotFoundException {
+        return viewerService.deleteViewer(user.getEmailId());
     }
-
 
     //posting the emailId of viewer and title of documentary
     @ApiOperation("Save episodic media relation")
     @PostMapping("graphDocumentary/{email}/{title}")
-    public Viewer saveDocumentaryRelation(@PathVariable String email, @PathVariable String title) throws ViewerNotFoundException {
+    public User saveDocumentaryRelation(@PathVariable String email, @PathVariable String title) throws ViewerNotFoundException {
         return viewerService.saveDocumentaryRelation(email, title);
     }
 
     //posting the emailId of viewer and title of movie
     @PostMapping("graphMovie/{email}/{title}")
-    public Viewer saveMovieRelation(@PathVariable String email, @PathVariable String title) throws ViewerNotFoundException {
+    public User saveMovieRelation(@PathVariable String email, @PathVariable String title) throws ViewerNotFoundException {
         return viewerService.saveMovieRelation(email, title);
     }
 
     //posting the emailId of viewer and title of tv episodes
     @PostMapping("graphTvEpisodes/{email}/{title}")
-    public Viewer saveTvEpisodesRelation(@PathVariable String email, @PathVariable String title) throws ViewerNotFoundException {
+    public User saveTvEpisodesRelation(@PathVariable String email, @PathVariable String title) throws ViewerNotFoundException {
         return viewerService.saveTvEpisodesRelation(email, title);
     }
 
     //posting the emailId of viewer and title of web series
     @PostMapping("graphWebSeries/{email}/{title}")
-    public Viewer saveWebSeriesRelation(@PathVariable String email, @PathVariable String title) throws ViewerNotFoundException {
+    public User saveWebSeriesRelation(@PathVariable String email, @PathVariable String title) throws ViewerNotFoundException {
         return viewerService.saveWebSeriesRelation(email, title);
     }
-
 
     @GetMapping("/recommendedInterestDocumentary/{email}")
     public Collection<Documentary> getRecInterestDocumentary(@PathVariable String email) throws MediaNotFoundException {

@@ -9,6 +9,15 @@
  #outerMatCard{
       margin-top:-75px;
     }
+
+    p,
+tr td,
+.form-control,
+button,
+.headingStyle,
+mat-radio-button {
+    font-family: 'Merriweather', serif;
+}
  label{
       font-size:15px;
     font-family: 'Merriweather', serif;

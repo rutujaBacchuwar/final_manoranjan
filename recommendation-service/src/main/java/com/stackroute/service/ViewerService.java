@@ -1,28 +1,28 @@
 package com.stackroute.service;
 
-import com.stackroute.domain.Viewer;
+import com.stackroute.domain.User;
 import com.stackroute.exception.ViewerAlreadyExistException;
 import com.stackroute.exception.ViewerNotFoundException;
 import java.util.Collection;
 
 public interface ViewerService {
 
-    public Collection<Viewer> getAll() throws ViewerNotFoundException;
+    public Collection<User> getAll() throws ViewerNotFoundException;
 
-    public Viewer saveViewer(Viewer viewer) throws ViewerAlreadyExistException;
+    public User saveViewer(User user) throws ViewerAlreadyExistException;
 
-    public Viewer getViewerByEmailId(String emailId) throws ViewerNotFoundException;
+    public User getViewerByEmailId(String emailId) throws ViewerNotFoundException;
 
-    public Viewer updateDetails(Viewer viewer) throws ViewerNotFoundException;
+    public User updateDetails(User user) throws ViewerNotFoundException;
 
-    public Collection<Viewer> deleteViewer(String emailId) throws ViewerNotFoundException;
+    public Collection<User> deleteViewer(String emailId) throws ViewerNotFoundException;
 
-    public Viewer saveDocumentaryRelation(String emailId, String title) throws ViewerNotFoundException;
+    public User saveDocumentaryRelation(String emailId, String title) throws ViewerNotFoundException;
 
-    public Viewer saveMovieRelation(String emailId, String title) throws ViewerNotFoundException;
+    public User saveMovieRelation(String emailId, String title) throws ViewerNotFoundException;
 
-    public Viewer saveTvEpisodesRelation(String emailId, String title) throws ViewerNotFoundException;
+    public User saveTvEpisodesRelation(String emailId, String title) throws ViewerNotFoundException;
 
-    public Viewer saveWebSeriesRelation(String emailId, String title) throws ViewerNotFoundException;
+    public User saveWebSeriesRelation(String emailId, String title) throws ViewerNotFoundException;
 
 }

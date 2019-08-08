@@ -1,4 +1,4 @@
-<div class="total">
+<!-- <div class="total"> -->
     <!-- navbar -->
     <app-main-nav></app-main-nav>
     <!--end of nevbar section-->
@@ -7,13 +7,13 @@
         <h4>Wishlist</h4>
         <div class="container-fluid" *ngIf="nomedia=='false'">
             <div class="row">
-                <h3>Movies And Documentries</h3>
+                <!-- <h3>Movies And Documentries</h3> -->
                 <div class="col-2" *ngFor="let item of standalone1">
                     <img src="{{item.mediaPosterUrl}}" class="image" routerLink="/movie/{{item.mediaTitle}}">
                 </div>
             </div>
             <div class="row">
-                <h3>Tv Episodes And Web Series</h3>
+                <!-- <h3>Tv Episodes And Web Series</h3> -->
                 <div class="col-2" *ngFor="let item of episodic1">
                     <img src="{{item.episodicPosterUrl}}" class="image" (click)="sendDetails(item)">
                 </div>
@@ -28,4 +28,4 @@
     </div>
     <!-- end of WishList -->
     <app-footer></app-footer>
-</div>
+<!-- </div> -->

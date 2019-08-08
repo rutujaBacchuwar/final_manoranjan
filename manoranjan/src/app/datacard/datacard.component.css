@@ -33,12 +33,6 @@ button {
     margin-bottom: 30px;
 }
 
-.items:hover img,
-.items.hover img {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-}
-
 h4 {
     color: white;
     font-size: 22px;

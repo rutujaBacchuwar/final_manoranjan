@@ -4,9 +4,9 @@
 }
 
 app-footer {
-    margin-top: 33%;
-    position: fixed;
+    margin-top: 250px;
+    position: fixed; 
     width: 100%;
-    height: auto;
+    /* height: auto; */
     overflow: hidden;
 }

@@ -1,8 +1,3 @@
-.total {
-    background-color: black;
-    font-family: 'Merriweather', serif;
-}
-
 .container {
     padding-top: 90px;
     padding-bottom: 200px;
@@ -25,11 +20,12 @@ h4 {
 
 .image {
     display: block;
-    width: 165px;
-    height: 180px;
+    height: 247px;
+    width: 232px;
     border-radius: 14px;
     margin-left: 12px;
     margin-top: 30px;
+    margin-bottom: 90px;
 }
 
 .col-2 {
@@ -43,9 +39,20 @@ h4 {
 }
 
 app-footer {
-    margin-top: 23%;
-    position: fixed;
+    /* margin-top: 250px; */
+    /* position: fixed;  */
     width: 100%;
-    height: auto;
     overflow: hidden;
+}
+.close1 {
+    position: absolute;
+    top: 0;
+    opacity: none;
+    right: 0;
+    height: 21px;
+    width: 30px;
+    border-radius: 40px;
+    margin-top: 2%;
+    margin-right: 7%;
+    font-family: 'Chewy', cursive;
 }

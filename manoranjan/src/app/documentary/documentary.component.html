@@ -4,7 +4,7 @@
         <h4>Documentary</h4>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2" *ngFor="let doc of documentaries1">
+                <div class="col-sm-3" *ngFor="let doc of documentaries1">
                     <div class="box" *ngIf="doc.mediaType=='free'">
                         <div class="imgbox">
                             <img src="{{doc.mediaPosterUrl}}" class="image" routerLink="/movie/{{doc.mediaTitle}}">

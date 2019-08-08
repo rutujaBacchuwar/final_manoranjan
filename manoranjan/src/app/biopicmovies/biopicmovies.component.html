@@ -4,7 +4,7 @@
         <h4>Biopic Movies</h4>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2" *ngFor="let movie of movies1">
+                <div class="col-sm-3" *ngFor="let movie of movies1">
                     <div class="box" *ngIf="movie.mediaType=='free'">
                         <div class="imgbox">
                             <img src="{{movie.mediaPosterUrl}}" class="image" routerLink="/movie/{{movie.mediaTitle}}">
@@ -18,9 +18,6 @@
                         <div class="imgbox">
                             <img src="{{movie.mediaPosterUrl}}" class="image" routerLink="/movie/{{movie.mediaTitle}}">
                             <span class="close1 badge badge-danger">M</span>
-                            <!-- <img class="close" src="../../assets/premiumLogo.jpeg" /> -->
-                            <!-- <p class="close">M</p> -->
-
                         </div>
                         <div class="content">
                             <h3>{{movie.mediaTitle}}</h3>

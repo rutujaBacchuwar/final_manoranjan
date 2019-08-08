@@ -1,6 +1,6 @@
 package com.stackroute.service;
 
-import com.stackroute.domain.Viewer;
+import com.stackroute.domain.User;
 import com.stackroute.exception.ViewerAlreadyExistException;
 import com.stackroute.exception.ViewerNotFoundException;
 import com.stackroute.repository.GenreRepository;
@@ -33,7 +33,7 @@ public class ViewerServiceImpl implements ViewerService {
 
     //Method to get all viewers
     @Cacheable
-    public Collection<Viewer> getAll() throws ViewerNotFoundException {
+    public Collection<User> getAll() throws ViewerNotFoundException {
         if (viewerRepository.getAllViewers() == null) {
             throw new ViewerNotFoundException();
         } else {
@@ -43,23 +43,23 @@ public class ViewerServiceImpl implements ViewerService {
 
     //method to save viewer
     @CacheEvict(allEntries = true)
-    public Viewer saveViewer(Viewer viewer) throws ViewerAlreadyExistException {
-        if (viewerRepository.findByEmailId(viewer.getEmailId()) == null) {
-            viewerRepository.createViewer(viewer.getName(), viewer.getEmailId());
-            int length = viewer.getInterest().size();
+    public User saveViewer(User user) throws ViewerAlreadyExistException {
+        if (viewerRepository.findByEmailId(user.getEmailId()) == null) {
+            viewerRepository.createViewer(user.getName(), user.getEmailId());
+            int length = user.getGenre().size();
             for (int i = 0; i < length; i++) {
-                viewerRepository.createGenreRelation(viewer.getEmailId(), viewer.getInterest().get(i));
+                viewerRepository.createGenreRelation(user.getEmailId(), user.getGenre().get(i));
             }
         }
         else {
             throw new ViewerAlreadyExistException();
         }
-        return viewer;
+        return user;
     }
 
     //method to get viewer by emailId
     @Cacheable
-    public Viewer getViewerByEmailId(String emailId) throws ViewerNotFoundException {
+    public User getViewerByEmailId(String emailId) throws ViewerNotFoundException {
         if (viewerRepository.findByEmailId(emailId) == null) {
             throw new ViewerNotFoundException();
         } else {
@@ -69,26 +69,26 @@ public class ViewerServiceImpl implements ViewerService {
 
     //method to update viewer details
     @CacheEvict(allEntries = true)
-    public Viewer updateDetails(Viewer viewer) throws ViewerNotFoundException {
-        if (viewerRepository.findByEmailId(viewer.getEmailId()) == null) {
+    public User updateDetails(User user) throws ViewerNotFoundException {
+        if (viewerRepository.findByEmailId(user.getEmailId()) == null) {
             throw new ViewerNotFoundException();
         } else {
-            Viewer viewer1 = viewerRepository.findByEmailId(viewer.getEmailId());
-            viewer1.setEmailId(viewer.getEmailId());
-            viewer1.setInterest(viewer.getInterest());
-            viewerRepository.save(viewer1);
-            return viewer1;
+            User user1 = viewerRepository.findByEmailId(user.getEmailId());
+            user1.setEmailId(user.getEmailId());
+            user1.setGenre(user.getGenre());
+            viewerRepository.save(user1);
+            return user1;
         }
     }
 
     //method to delete viewer by emailId
     @CacheEvict(allEntries = true)
-    public Collection<Viewer> deleteViewer(String emailId) throws ViewerNotFoundException {
+    public Collection<User> deleteViewer(String emailId) throws ViewerNotFoundException {
         if (viewerRepository.findByEmailId(emailId) == null) {
             throw new ViewerNotFoundException();
         } else {
-            Viewer viewer = viewerRepository.findByEmailId(emailId);
-            viewerRepository.delete(viewer);
+            User user = viewerRepository.findByEmailId(emailId);
+            viewerRepository.delete(user);
             return viewerRepository.getAllViewers();
         }
     }
@@ -96,7 +96,7 @@ public class ViewerServiceImpl implements ViewerService {
 
     //method to save viewer and documentary relation
     @CacheEvict(allEntries = true)
-    public Viewer saveDocumentaryRelation(String emailId, String title) throws ViewerNotFoundException {
+    public User saveDocumentaryRelation(String emailId, String title) throws ViewerNotFoundException {
         if (viewerRepository.findByEmailId(emailId) == null) {
             throw new ViewerNotFoundException();
         } else {
@@ -106,7 +106,7 @@ public class ViewerServiceImpl implements ViewerService {
 
     //method to save viewer and movie relation
     @CacheEvict(allEntries = true)
-    public Viewer saveMovieRelation(String emailId, String title) throws ViewerNotFoundException {
+    public User saveMovieRelation(String emailId, String title) throws ViewerNotFoundException {
         if (viewerRepository.findByEmailId(emailId) == null) {
             throw new ViewerNotFoundException();
         } else {
@@ -115,7 +115,7 @@ public class ViewerServiceImpl implements ViewerService {
     }
 
     //method to save viewer and TvEpisodes relation
-    public Viewer saveTvEpisodesRelation(String emailId, String title) throws ViewerNotFoundException {
+    public User saveTvEpisodesRelation(String emailId, String title) throws ViewerNotFoundException {
         if (viewerRepository.findByEmailId(emailId) == null) {
             throw new ViewerNotFoundException();
         } else {
@@ -124,7 +124,7 @@ public class ViewerServiceImpl implements ViewerService {
     }
 
     //method to save viewer and WebSeries relation
-    public Viewer saveWebSeriesRelation(String emailId, String title) throws ViewerNotFoundException {
+    public User saveWebSeriesRelation(String emailId, String title) throws ViewerNotFoundException {
         if (viewerRepository.findByEmailId(emailId) == null) {
             throw new ViewerNotFoundException();
         } else {

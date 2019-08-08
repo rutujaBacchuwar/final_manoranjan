@@ -224,10 +224,10 @@ export class StandaloneStepperComponent implements OnInit {
         console.log(error)
       });
 
-    this.producer.emailId = sessionStorage.getItem('email');
-    console.log(this.producer.emailId)
+    // this.producer.emailId = sessionStorage.getItem('email');
+    // console.log(this.producer.emailId)
     console.log(this.title)
-   this.userService.updateUploadedStandalone(this.producer.emailId,this.title).subscribe(com=>{
+   this.userService.updateUploadedStandalone(sessionStorage.getItem('email'),this.title).subscribe(com=>{
      console.log("saved");
      console.log(com)
    },

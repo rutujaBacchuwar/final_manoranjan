@@ -17,7 +17,7 @@ public class InterestedInRelationship  {
     private String emailId;
 
     @StartNode
-    private Viewer viewer;
+    private User user;
 
     @EndNode
     private Genre genre;

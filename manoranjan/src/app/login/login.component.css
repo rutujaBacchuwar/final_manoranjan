@@ -313,9 +313,9 @@
       width: 60%;
   }
   input.new {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     border-radius: 14px;
-    background: #09b2f5;
+    background: #0fa1db;
     padding:15px;
     width:40%;
 }

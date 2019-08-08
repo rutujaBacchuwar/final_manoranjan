@@ -1,15 +1,12 @@
 <!--navbar section-->
-<script src="https://vjs.zencdn.net/5.11/video.min.js"></script>
-
 <app-nav-norm *ngIf="status==='false'"></app-nav-norm>
 <app-main-nav *ngIf="status==='true'"></app-main-nav>
 <!--end of nevbar section-->
 
 <div>
-    <h3 >
-        {{title}} 
+    <h3>
+        {{title}}
     </h3>
-    <!-- <div *ngIf="videoAvailable"> -->
     <video #videoPlayer 
         id="video"
         class="video-js vjs-default-skin vjs-big-play-centered"
@@ -22,29 +19,7 @@
     >
         <source [src]="url" type="rtmp/mp4">
     </video>
-<!-- </div> -->
-
-<!-- <vg-player> -->
-
-    <!-- <video
-    id="video"
-        class="video-js vjs-default-skin vjs-big-play-centered"
-        autoplay
-        controls
-        preload="auto"
-        data-setup='{"techOrder": ["flash"],
-        "nativeControlsForTouch": true, "controlBar": { "muteToggle": true,
-        "volumeControl": true, "timeDivider": false, "durationDisplay": false, "progressControl": true } }'
-    [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
-        <source [src]="url" type="rtmp/mp4">
-    </video> -->
-    <!-- <vg-media vg-src="url" vg-dash></vg-media> -->
-<!-- </vg-player> -->
 </div>
 <!--footer section-->
-
-<!-- <mat-video [src]="url1"></mat-video> -->
-
-
 <app-footer></app-footer>
 <!--end of footer section-->

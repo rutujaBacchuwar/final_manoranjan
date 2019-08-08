@@ -124,14 +124,9 @@ import { NavComponent } from './nav/nav.component';
 import { PaymentdialogComponent } from './paymentdialog/paymentdialog.component';
 import { ProducerdialogComponent } from './producerdialog/producerdialog.component';
 import { UserdialogComponent } from './userdialog/userdialog.component';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatVideoModule } from 'mat-video';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { UploadedComponent } from './uploaded/uploaded.component';
 
-import { VgCoreModule } from 'videogular2/compiled/core';
-import { VgControlsModule } from 'videogular2/compiled/controls';
-import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
-import { VgBufferingModule } from 'videogular2/compiled/buffering';
-// import { VgMedia } from 'videogular-dash'
 
 @NgModule({
   declarations: [
@@ -240,7 +235,8 @@ import { VgBufferingModule } from 'videogular2/compiled/buffering';
     NavComponent,
     PaymentdialogComponent,
     ProducerdialogComponent,
-    UserdialogComponent
+    UserdialogComponent,
+    UploadedComponent
   ],
   imports: [
     BrowserModule,
@@ -267,12 +263,7 @@ import { VgBufferingModule } from 'videogular2/compiled/buffering';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatExpansionModule,
-    MatVideoModule,
-    VgCoreModule,
-    VgControlsModule,
-    VgOverlayPlayModule,
-    VgBufferingModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],

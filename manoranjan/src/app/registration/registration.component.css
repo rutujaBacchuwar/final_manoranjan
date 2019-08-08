@@ -5,6 +5,14 @@ section{
     height:100%; 
   }
   
+  p,
+tr td,
+.form-control,
+button,
+.headingStyle,
+mat-radio-button {
+    font-family: 'Merriweather', serif;
+}
   #outerMatCard{
     margin-top: 75px;
   }

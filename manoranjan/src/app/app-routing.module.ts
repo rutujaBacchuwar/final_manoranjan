@@ -113,7 +113,7 @@ const routes: Routes = [
   {path: 'actionmoviepri',component:ActionmoviepriComponent},
   {path: 'horrormoviepri',component:HorrormoviepriComponent},
   {path: 'comedymoviepri',component:ComedymoviepriComponent},
-  {path: 'thrillermoviepri',component:ThrillermoviepriComponent},
+  {path: 'kidsmoviepri',component:ThrillermoviepriComponent},
   {path: 'romanticmoviepri',component:RomanticmoviepriComponent},
   {path: 'mysterymoviepri',component:MysterymoviepriComponent},
   {path: 'mythologymoviepri',component:MysterymoviepriComponent},

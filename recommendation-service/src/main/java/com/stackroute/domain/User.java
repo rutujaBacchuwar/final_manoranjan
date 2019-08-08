@@ -13,11 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @NodeEntity
-public class Viewer {
+public class User {
 
     @GraphId
-    private Long id;
-    private String name;
     private String emailId;
-    private List<String> interest;
+    private String name;
+    private List<String> genre;
 }

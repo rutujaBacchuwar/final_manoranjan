@@ -3,7 +3,7 @@
         <h4>Marathi Serials</h4>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2" *ngFor="let serial of serials1">
+                <div class="col-sm-3" *ngFor="let serial of serials1">
                     <div class="box" *ngIf="serial.episodicType=='free'">
                         <div class="imgbox">
                             <img src="{{serial.episodicPosterUrl}}" class="image" (click)="sendDetails(serial)">

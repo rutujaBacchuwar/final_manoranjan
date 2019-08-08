@@ -20,7 +20,7 @@ public class InLanguageRelationship {
     private String emailId;
 
     @StartNode
-    private Viewer viewer;
+    private User user;
 
     @EndNode
     private Documentary documentary;

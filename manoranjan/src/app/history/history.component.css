@@ -21,12 +21,13 @@ h4 {
     font-size: 22px;
     margin-left: 30px;
     margin-top: 20px;
+    margin-bottom: 380px;
 }
 
 .image {
     display: block;
-    width: 165px;
-    height: 180px;
+    height: 247px;
+    width: 232px;
     border-radius: 14px;
     margin-left: 12px;
     margin-top: 30px;
@@ -43,8 +44,8 @@ h4 {
 }
 
 app-footer {
-    margin-top: 23%;
-    position: fixed;
+    /* margin-top: 400px; */
+    /* position: fixed; */
     width: 100%;
     height: auto;
     overflow: hidden;
