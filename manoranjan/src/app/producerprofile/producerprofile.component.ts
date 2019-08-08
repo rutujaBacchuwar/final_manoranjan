@@ -36,7 +36,7 @@ export class ProducerprofileComponent implements OnInit {
 
   ngOnInit() {
     // this.producer.emailId = sessionStorage.getItem('email');
-    console.log(this.producer.emailId);
+    // console.log(this.producer.emailId);
     this.userService.getByEmailId(sessionStorage.getItem('email')).subscribe(data => {
       this.producer = data;
       console.log("POST Request is successful ", data);
